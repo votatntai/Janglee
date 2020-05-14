@@ -19,7 +19,8 @@ $(function () {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert(errorThrown);
+                $('#message').html(errorThrown);
+                $('#modal').modal('show');
             }
         });
     });
@@ -47,7 +48,8 @@ $(function () {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                location.reload();
+                $('#message').html(errorThrown);
+                $('#modal').modal('show');
             }
         });
     });
