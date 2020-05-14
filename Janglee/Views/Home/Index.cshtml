@@ -1,0 +1,125 @@
+﻿@model Janglee.Models.DTO.User;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="col-md-6 mx-auto">
+    <div class="text-center wow fadeIn animated">
+        <form class="form-elegant mt-5" asp-action="Login" id="form-login">
+            <div class="card">
+                <div class="card-body mx-4">
+                    <div class="text-center">
+                        <h3 class="dark-grey-text mb-5">
+                            <strong>Sign in</strong>
+                        </h3>
+                    </div>
+
+                    <div class="md-form">
+                        <input asp-for="Username" type="text" required class="form-control">
+                        <label>Username</label>
+                    </div>
+
+                    <div class="md-form pb-3">
+                        <input asp-for="Password" type="password" required class="form-control">
+                        <label>Password</label>
+                    </div>
+
+                    <div class="text-center mb-3">
+                        <button type="submit"
+                                class="btn btn-outline-light-blue btn-block btn-rounded z-depth-1a waves-effect waves-light"
+                                style="border-radius: 30px;">
+                            Sign in
+                        </button>
+                    </div>
+                    <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with</p>
+
+                    <div class="row my-3 d-flex justify-content-center">
+                        <!--Facebook-->
+                        <button type="button"
+                                class="btn btn-white btn-rounded mr-md-3 z-depth-1a waves-effect waves-light"
+                                data-toggle="modal" data-target="#notifyModal" style="border-radius: 30px;">
+                            <i class="fab fa-facebook-f blue-text text-center"></i>
+                        </button>
+                        <!--Google +-->
+                        <button type="button" data-toggle="modal" data-target="#notifyModal"
+                                class="btn btn-white btn-rounded z-depth-1a waves-effect waves-light"
+                                style="border-radius: 30px;">
+                            <i class="fab fa-google blue-text"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="modal-footer mx-5 pt-3 mb-1">
+                    <p class="font-small grey-text d-flex justify-content-end">
+                        Not a member?
+                        <a href="#" class="blue-text ml-1" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*Register Modal*@
+<div class="modal fade left" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full-height modal-left" role="document">
+
+        <div class="modal-content">
+            <form class="form-elegant my-3" asp-action="Register" id="form-register">
+                <div class="card-body mx-4">
+                    <div class="card card-cascade wider">
+                        <div class="view view-cascade overlay">
+                            <img class="card-img-top" src="~/img/welcome.jpg" alt="Card image cap">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body card-body-cascade text-center">
+                            <h4 class="card-title"><strong>Đăng Ký Đi Bạn</strong></h4>
+                            <p class="card-text">
+                                <i class="fas fa-quote-left"></i>
+                                Bạn không thể lựa chọn nơi mình sinh ra, nhưng tại đây bạn có thể chọn cho mình một tài khoản đẹp.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="my-5">
+                        <div class="md-form">
+                            <input asp-for="Username" type="text" required class="form-control">
+                            <label>Username</label>
+                        </div>
+
+                        <div class="md-form">
+                            <input asp-for="Fullname" type="text" required class="form-control">
+                            <label>Fullname</label>
+                        </div>
+
+                        <div class="md-form">
+                            <input asp-for="Password" type="password" required class="form-control" id="password">
+                            <label>Password</label>
+                        </div>
+
+                        <div class="md-form">
+                            <input type="password" required class="form-control" id="confirm">
+                            <label>Confirm</label>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <button type="submit" class="btn btn-outline-light-green btn-block btn-rounded waves-effect waves-light"
+                                    style="border-radius: 30px;">
+                                Sign up
+                            </button>
+                        </div>
+
+                        <div class="justify-content-center mt-3">
+                            <button type="button"
+                                    class="btn btn-outline-light-blue btn-block btn-rounded waves-effect waves-light"
+                                    style="border-radius: 30px;" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

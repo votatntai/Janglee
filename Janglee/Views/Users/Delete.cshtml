@@ -1,0 +1,38 @@
+﻿@model Janglee.Models.DTO.User
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="col-md-12">
+    <div class="col-md-6 mx-auto">
+        <div class="card mb-3">
+            <div class="mx-5 my-3">
+                <h2>Delete <a class="green-text">@Html.DisplayFor(model => model.Username)</a></h2>
+                <div>
+                    <h3>Are you sure?</h3>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Fullname)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Fullname)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Role)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Role)
+                        </dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Username" />
+                        <input type="submit" value="Delete" class="btn btn-md btn-rounded btn-outline-danger" />
+                        <button asp-action="Index" class="btn btn-md btn-outline-dark btn-rounded">Back to List</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

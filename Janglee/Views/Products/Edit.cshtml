@@ -1,0 +1,61 @@
+﻿@model Janglee.Models.DTO.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<section>
+
+    <div class="card">
+
+        <div class="row">
+
+            <div class="col-md-6 my-auto">
+                <img class="img-fluid rounded-left" src="/img/@Html.DisplayFor(model => model.Image)" alt="Product image">
+            </div>
+
+            <div class="col-md-6 p-5 align-self-center">
+
+                <h5 class="font-weight-normal mb-3 font-weight-bold">Products Detail</h5>
+
+                <p class="text-muted">
+                    Out or geared it but to best up samples the for she phase of copy would do in divine
+                    of taken and the take medical or upper at him in the logbook were, we price his mostly to commas.
+                </p>
+
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ProductID" />
+                    <div class="form-group">
+                        <label asp-for="ProductName" class="control-label"></label>
+                        <input asp-for="ProductName" class="form-control" />
+                        <span asp-validation-for="ProductName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" type="number" step="0.1" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Quantity" class="control-label"></label>
+                        <input asp-for="Quantity" type="number" step="1" class="form-control" />
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="custom-file">
+                        <input asp-for="Image" type="file" class="custom-file-input" id="customFileLang"
+                               lang="us" required>
+                        <label class="custom-file-label" for="customFileLang">Image</label>
+                    </div>
+                    <div class="form-group text-center mt-3">
+                        <input class="btn btn-md btn-outline-primary btn-rounded" value="Save" type="submit">
+                        <a class="btn btn-md btn-outline-dark btn-rounded" asp-action="Index">Back to List</a>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

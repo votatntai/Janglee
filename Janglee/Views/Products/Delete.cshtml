@@ -1,0 +1,41 @@
+﻿@model Janglee.Models.DTO.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="col-md-12">
+    <div class="col-md-6 mx-auto">
+        <div class="card mb-3">
+            <div class="mx-5 my-3">
+                <h2>Delete <a class="green-text">@Html.DisplayFor(model => model.ProductName)</a></h2>
+                <div>
+                    <h3>Are you sure?</h3>
+                    <hr />
+                    <dl class="row">
+                        <dd class="col-sm-12">
+                            <img src="~/img/@Html.DisplayFor(model => model.Image)" alt="thumbnail" style="width: 200px">
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Price)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Quantity)
+                        </dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="ProductID" />
+                        <input type="submit" value="Delete" class="btn btn-md btn-rounded btn-outline-danger" />
+                        <button asp-action="Index" class="btn btn-md btn-outline-dark btn-rounded">Back to List</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
