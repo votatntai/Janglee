@@ -8,7 +8,7 @@ namespace Janglee.Models.DAO
     public class Database
     {
 
-        SqlConnection connect = new SqlConnection("Data Source=.;Initial Catalog=Janglee;Persist Security Info=True;User ID=sa;Password=tantai4899");
+        SqlConnection connect = new SqlConnection("Server=tcp:janglee.database.windows.net,1433;Initial Catalog=Janglee;Persist Security Info=False;User ID=votantai4899;Password=Tai01639505022;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         public int CheckLogin(User user)
         {
