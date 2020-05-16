@@ -54,3 +54,8 @@ $(function () {
         });
     });
 });
+/* Show model ERROR-PAGE */
+const url = window.location.href;
+if (url.endsWith('Error')) {
+    $("#error-modal").modal('show');
+}
