@@ -12,12 +12,14 @@
                 <div class="row d-flex justify-content-center align-items-center">
                     <p class="pt-3 pr-2">
                         An error occurred while processing your request.
+                    </p>
+                    <div class="mx-3 text-center">
                         @if (Model.ShowRequestId)
                         {
-                        <p>
-                            <strong>Request ID:</strong> <code>@Model.RequestId</code>
-                        </p>
-                    }
+                            <p>
+                                <strong>Request ID:</strong> <code>@Model.RequestId</code>
+                            </p>
+                        }
                         <h3>Development Mode</h3>
                         <p>
                             Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
@@ -30,9 +32,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="modal-footer flex-center">
-                    <a class="btn btn-outline-light-blue waves-effect" data-dismiss="modal">Close</a>
-                </div>
+            </div>
+            <div class="modal-footer flex-center">
+                <a class="btn btn-outline-light-blue waves-effect" data-dismiss="modal">Close</a>
             </div>
         </div>
     </div>
+</div>
