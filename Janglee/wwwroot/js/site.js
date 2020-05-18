@@ -55,5 +55,4 @@ $(function () {
     });
 });
 /* Show model ERROR-PAGE */
-const url = window.location.href;
 $("#error-modal").modal('show');
